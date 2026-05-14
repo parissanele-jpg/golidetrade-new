@@ -12,11 +12,12 @@ body {
 button {
   cursor: pointer;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
   background-color: #facc15;
   color: black;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 button:hover {
@@ -24,8 +25,8 @@ button:hover {
 }
 
 a {
-  color: #facc15;
   text-decoration: none;
+  color: white;
 }
 
 header {
