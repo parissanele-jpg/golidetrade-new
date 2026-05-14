@@ -1,151 +1,300 @@
+# Modern Golide Trade Layout
+
+## Replace your `src/index.css` with this:
+
+```css
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #facc15;
+  position: sticky;
+  top: 0;
+  background: #000;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background-color: #facc15;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.hero {
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: #facc15;
+}
+
+.hero p {
+  font-size: 22px;
+  color: #ddd;
+}
+
+.hero-buttons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #facc15;
+  padding: 30px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  color: #facc15;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.product-card {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.product-card h2 {
+  color: #facc15;
+}
+
+.contact {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+footer {
+  border-top: 1px solid #facc15;
+  padding: 20px;
+  text-align: center;
+  color: #aaa;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+```
+
+---
+
+## Replace your `src/App.js` with this:
+
+```javascript
 import { useState } from "react";
-const Card = ({ children, className }) => (
-  <div className={className}>{children}</div>
-);
-
-const CardContent = ({ children }) => <div className="p-4">{children}</div>;
-
-const Button = ({ children, className, onClick }) => (
-  <button onClick={onClick} className={`px-4 py-2 rounded-lg ${className}`}>
-    {children}
-  </button>
-);
+import "./index.css";
 
 export default function GolideTradeWebsite() {
   const [activeTab, setActiveTab] = useState("home");
 
   const whatsappNumber = "27844476937";
-
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   const products = [
-    { name: "iPhone 15 Pro Max 256GB", price: "R21,999" },
-    { name: "Samsung S24 Ultra 256GB", price: "R17,999" },
+    { name: "iPhone 15 Pro Max", price: "R21,999" },
+    { name: "Samsung S24 Ultra", price: "R17,999" },
     { name: "MacBook Air M2", price: "R18,999" },
     { name: "Nike Air Force 1", price: "R1,499" },
-    { name: "Lattafa Yara 100ml", price: "R479" },
+    { name: "Lattafa Yara Perfume", price: "R479" },
   ];
 
   return (
-    <div className="min-h-screen bg-black text-gold-300 text-white">
-      {/* HEADER */}
-      <header className="flex flex-col md:flex-row justify-between items-center p-4 border-b border-yellow-600">
-        <div className="text-2xl font-bold text-yellow-400">GOLIDE TRADE</div>
-        <div className="flex gap-3 items-center">
-          <Button onClick={() => setActiveTab("home")}>Home</Button>
-          <Button onClick={() => setActiveTab("shop")}>Shop</Button>
-          <Button onClick={() => setActiveTab("latest")}>Latest Stock</Button>
-          <Button onClick={() => setActiveTab("specials")}>Specials</Button>
-          <Button onClick={() => setActiveTab("contact")}>Contact</Button>
-        </div>
+    <div>
+      <header>
+        <div className="logo">GOLIDE TRADE</div>
+
+        <nav>
+          <button onClick={() => setActiveTab("home")}>Home</button>
+          <button onClick={() => setActiveTab("shop")}>Shop</button>
+          <button onClick={() => setActiveTab("latest")}>Latest Stock</button>
+          <button onClick={() => setActiveTab("specials")}>Specials</button>
+          <button onClick={() => setActiveTab("contact")}>Contact</button>
+        </nav>
       </header>
 
-      {/* HERO */}
       {activeTab === "home" && (
-        <section className="p-10 text-center">
-          <h1 className="text-5xl font-bold text-yellow-400">
-            Premium Tech & Lifestyle
-          </h1>
-          <p className="mt-3 text-gray-300">Trusted Deals, Premium Quality</p>
+        <section className="hero">
+          <h1>Trusted Deals, Premium Quality</h1>
+          <p>Trusted Deals. Premium Quality. Fast Service.</p>
 
-          <div className="mt-6 flex justify-center gap-4">
-            <a href={whatsappLink} target="_blank">
-              <Button className="bg-green-600">Order on WhatsApp</Button>
+          <div className="hero-buttons">
+            <a href={whatsappLink} target="_blank" rel="noreferrer">
+              <button>Order on WhatsApp</button>
             </a>
-            <Button onClick={() => setActiveTab("shop")}>
-              Browse Products
-            </Button>
+
+            <button onClick={() => setActiveTab("shop")}>Browse Products</button>
           </div>
 
-          <div className="mt-10 grid md:grid-cols-3 gap-6 text-left">
-            <Card className="bg-gray-900 border-yellow-600">
-              <CardContent>Phones, Laptops, Sneakers</CardContent>
-            </Card>
-            <Card className="bg-gray-900 border-yellow-600">
-              <CardContent>Perfumes & Accessories</CardContent>
-            </Card>
-            <Card className="bg-gray-900 border-yellow-600">
-              <CardContent>Data Bundles & Deals</CardContent>
-            </Card>
+          <div className="cards">
+            <div className="card">
+              <h3>Phones & Laptops</h3>
+              <p>Latest iPhones, Samsung devices, and MacBooks.</p>
+            </div>
+
+            <div className="card">
+              <h3>Sneakers & Fashion</h3>
+              <p>Trendy sneakers, clothes, and accessories.</p>
+            </div>
+
+            <div className="card">
+              <h3>Perfumes & Data</h3>
+              <p>Luxury fragrances and affordable data deals.</p>
+            </div>
           </div>
         </section>
       )}
 
-      {/* SHOP */}
       {activeTab === "shop" && (
-        <section className="p-6 grid md:grid-cols-3 gap-4">
-          {products.map((p, i) => (
-            <Card key={i} className="bg-gray-900 border-yellow-600">
-              <CardContent>
-                <h2 className="text-lg font-bold text-yellow-400">{p.name}</h2>
-                <p className="mt-2">{p.price}</p>
-                <a
-                  href={`${whatsappLink}?text=Hi%20Golide%20Trade%2C%20I%20want%20to%20order%20${encodeURIComponent(
-                    p.name
-                  )}`}
-                  target="_blank"
-                >
-                  <Button className="mt-3 bg-green-600 w-full">
-                    Order on WhatsApp
-                  </Button>
-                </a>
-              </CardContent>
-            </Card>
+        <section className="products">
+          {products.map((product, i) => (
+            <div className="product-card" key={i}>
+              <h2>{product.name}</h2>
+              <p>{product.price}</p>
+
+              <a
+                href={`${whatsappLink}?text=Hi%20Golide%20Trade,%20I%20want%20to%20order%20${product.name}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button>Order Now</button>
+              </a>
+            </div>
           ))}
         </section>
       )}
 
-      {/* LATEST STOCK */}
       {activeTab === "latest" && (
-        <section className="p-10 text-center">
-          <h2 className="text-3xl text-yellow-400 font-bold">Latest Stock</h2>
-          <p className="text-gray-300 mt-2">New arrivals updated weekly</p>
+        <section className="contact">
+          <h1>Latest Stock</h1>
+          <p>New arrivals updated weekly.</p>
         </section>
       )}
 
-      {/* SPECIALS */}
       {activeTab === "specials" && (
-        <section className="p-10 text-center">
-          <h2 className="text-3xl text-yellow-400 font-bold">Special Offers</h2>
-          <p className="text-gray-300 mt-2">Best deals available now</p>
+        <section className="contact">
+          <h1>Special Offers</h1>
+          <p>Best deals available right now.</p>
         </section>
       )}
 
-      {/* CONTACT */}
       {activeTab === "contact" && (
-        <section className="p-10 text-center space-y-4">
-          <h2 className="text-3xl text-yellow-400 font-bold">Contact Us</h2>
+        <section className="contact">
+          <h1>Contact Us</h1>
 
-          <p>
-            <p>📞 084 447 6937</p>
-          </p>
-          <p>
-            <p>📍 130 Harding Street, Estcourt</p>
-          </p>
-          <p>Opposite Engine Garage, next to Nyangayezizwe, 2nd Floor</p>
+          <p>📞 084 447 6937</p>
+          <p>📍 130 Harding Street, Estcourt</p>
+          <p>Opposite Engine Garage, next to Nyangayezizwe</p>
 
-          <div className="flex justify-center gap-4 mt-4">
+          <div className="contact-links">
             <a
               href="https://www.facebook.com/share/17VPrGMBuT/?mibextid=wwXIfr"
               target="_blank"
+              rel="noreferrer"
             >
-              📘 Facebook
+              Facebook
             </a>
+
             <a
-              href="https://www.tiktok.com/@parissanele8?_r=1&_t=ZS-96M797q9QFm"
+              href="https://www.tiktok.com/@parissanele8"
               target="_blank"
+              rel="noreferrer"
             >
               TikTok
             </a>
+
             <a href="mailto:golidetrade@outlook.com">Email</a>
           </div>
         </section>
       )}
 
-      {/* FOOTER */}
-      <footer className="p-6 text-center border-t border-yellow-600 text-gray-400">
-        © 2026 Golide Trade - Trusted Deals, Premium Quality
+      <footer>
+        © 2026 Golide Trade — Trusted Deals, Premium Quality
       </footer>
     </div>
   );
 }
+```
+
+After replacing these files:
+
+1. Commit changes to GitHub
+2. Wait for Vercel redeploy
+3. Refresh your website
+
+Your website will then look modern, clean, and professional.
