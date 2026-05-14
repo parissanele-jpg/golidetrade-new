@@ -170,7 +170,7 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="footer">
-        © 2026 Golide Trade — Trusted Deals, Premium Quality
+        © 2021 Golide Trade — Trusted Deals, Premium Quality
       </footer>
     </div>
   );
