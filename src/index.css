@@ -1,63 +1,37 @@
 body {
-  padding: 30px;
-  border-radius: 18px;
-  transition: 0.3s;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: white;
 }
 
-.card:hover {
-  transform: translateY(-6px);
+* {
+  box-sizing: border-box;
 }
 
-.card h3 {
+button {
+  cursor: pointer;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #facc15;
+  color: black;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+a {
   color: #facc15;
+  text-decoration: none;
 }
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.product-card {
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 18px;
-  padding: 20px;
-}
-
-.product-card h2 {
-  color: #facc15;
-}
-
-.contact {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+header {
+  border-bottom: 1px solid #facc15;
 }
 
 footer {
   border-top: 1px solid #facc15;
-  padding: 20px;
-  text-align: center;
-  color: #aaa;
-  margin-top: 50px;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
 }
