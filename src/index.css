@@ -1,3 +1,146 @@
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #facc15;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #facc15;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #facc15;
+  color: black;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 60px;
+  color: #facc15;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  color: #d1d5db;
+  font-size: 20px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.whatsapp-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.features {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-card,
+.product-card {
+  background: #111827;
+  border: 1px solid #facc15;
+  border-radius: 16px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.products {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.product-card h2 {
+  color: #facc15;
+}
+
+.section-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-page h2 {
+  color: #facc15;
+  font-size: 42px;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: #facc15;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
   border-top: 1px solid #facc15;
+  color: #9ca3af;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
