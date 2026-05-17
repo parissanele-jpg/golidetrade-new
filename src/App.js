@@ -147,6 +147,38 @@ export default function App() {
             Your one-stop shop for phones,
             laptops, sneakers, perfumes,
             accessories and more.
+
+        <div className="home-banner">
+
+  <img
+    src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1400"
+    alt="iPhone Banner"
+    className="banner-image"
+  />
+
+  <div className="banner-overlay">
+
+    <h2>
+      New iPhone & Samsung Stock Available
+    </h2>
+
+    <p>
+      Smartphones, Laptops, Sneakers,
+      Jerseys, Perfumes & MTN Data Bundles
+    </p>
+
+    <Button
+      className="banner-btn"
+      onClick={() => {
+        setActiveTab("shop");
+        setSelectedCategory(null);
+      }}
+    >
+      Shop Now
+    </Button>
+
+  </div>
+</div>
           </p>
 
           <div className="hero-buttons">
