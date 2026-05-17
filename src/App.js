@@ -1,8 +1,14 @@
 import { useState } from "react";
 import "./index.css";
 
-const Card = ({ children, className }) => (
-  <div className={className}>{children}</div>
+const Card = ({ children, className, onClick }) => (
+  <div
+    className={className}
+    onClick={onClick}
+    style={{ cursor: "pointer" }}
+  >
+    {children}
+  </div>
 );
 
 const CardContent = ({ children }) => (
