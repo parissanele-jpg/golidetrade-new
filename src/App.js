@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 
+const [selectedCategory, setSelectedCategory] = useState(null);
 const Card = ({ children, className, onClick }) => (
   <div
     className={className}
@@ -27,43 +28,69 @@ export default function App() {
   const whatsappNumber = "27844476937";
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
-  const products = [
-    {
-      name: "iPhone 15 Pro Max 256GB",
-      price: "R21,999",
-      image:
-        "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=1000",
-    },
+ const products = [
+  // Smartphones
+  {
+    category: "smartphones",
+    name: "iPhone 15 Pro Max",
+    price: "R21,999",
+    image:
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=1000",
+  },
 
-    {
-      name: "Samsung S24 Ultra 256GB",
-      price: "R17,999",
-      image:
-        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=1000",
-    },
+  {
+    category: "smartphones",
+    name: "Samsung S24 Ultra",
+    price: "R17,999",
+    image:
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=1000",
+  },
 
-    {
-      name: "MacBook Air M2",
-      price: "R18,999",
-      image:
-        "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1000",
-    },
+  // Laptops
+  {
+    category: "laptops",
+    name: "MacBook Air M2",
+    price: "R18,999",
+    image:
+      "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?q=80&w=1000",
+  },
 
-    {
-      name: "Nike Air Force 1",
-      price: "R1,499",
-      image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000",
-    },
+  // Sneakers + Fashion
+  {
+    category: "fashion",
+    name: "Nike Air Force 1",
+    price: "R1,499",
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000",
+  },
 
-    {
-      name: "Lattafa Yara 100ml",
-      price: "R479",
-      image:
-        "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000",
-    },
-  ];
+  // Football & Branded T-Shirts
+  {
+    category: "football",
+    name: "Manchester United Jersey",
+    price: "R599",
+    image:
+      "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1000",
+  },
 
+  // Perfumes
+  {
+    category: "perfumes",
+    name: "Lattafa Yara",
+    price: "R479",
+    image:
+      "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1000",
+  },
+
+  // MTN Data Bundles
+  {
+    category: "data",
+    name: "MTN 20GB Data Bundle",
+    price: "R149",
+    image:
+      "https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1000",
+  },
+];
   return (
     <div className="app">
 
@@ -123,32 +150,77 @@ export default function App() {
 
           </div>
 
-         <div className="features">
+        <div className="features">
 
   <Card
     className="feature-card"
-    onClick={() => setActiveTab("shop")}
+    onClick={() => {
+      setSelectedCategory("smartphones");
+      setActiveTab("shop");
+    }}
   >
     <CardContent>
-      Phones & Laptops
+      Smartphones
     </CardContent>
   </Card>
 
   <Card
     className="feature-card"
-    onClick={() => setActiveTab("shop")}
+    onClick={() => {
+      setSelectedCategory("laptops");
+      setActiveTab("shop");
+    }}
   >
     <CardContent>
-      Sneakers & Fashion
+      Laptops
     </CardContent>
   </Card>
 
   <Card
     className="feature-card"
-    onClick={() => setActiveTab("shop")}
+    onClick={() => {
+      setSelectedCategory("fashion");
+      setActiveTab("shop");
+    }}
   >
     <CardContent>
-      Perfumes & Accessories
+      Sneakers + Fashion
+    </CardContent>
+  </Card>
+
+  <Card
+    className="feature-card"
+    onClick={() => {
+      setSelectedCategory("football");
+      setActiveTab("shop");
+    }}
+  >
+    <CardContent>
+      Football & Branded T-Shirts
+    </CardContent>
+  </Card>
+
+  <Card
+    className="feature-card"
+    onClick={() => {
+      setSelectedCategory("perfumes");
+      setActiveTab("shop");
+    }}
+  >
+    <CardContent>
+      Perfumes
+    </CardContent>
+  </Card>
+
+  <Card
+    className="feature-card"
+    onClick={() => {
+      setSelectedCategory("data");
+      setActiveTab("shop");
+    }}
+  >
+    <CardContent>
+      MTN Data Bundles
     </CardContent>
   </Card>
 
