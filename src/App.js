@@ -117,27 +117,36 @@ export default function App() {
 
           </div>
 
-          <div className="features">
+         <div className="features">
 
-            <Card className="feature-card">
-              <CardContent>
-                Phones & Laptops
-              </CardContent>
-            </Card>
+  <Card
+    className="feature-card"
+    onClick={() => setActiveTab("shop")}
+  >
+    <CardContent>
+      Phones & Laptops
+    </CardContent>
+  </Card>
 
-            <Card className="feature-card">
-              <CardContent>
-                Sneakers & Fashion
-              </CardContent>
-            </Card>
+  <Card
+    className="feature-card"
+    onClick={() => setActiveTab("shop")}
+  >
+    <CardContent>
+      Sneakers & Fashion
+    </CardContent>
+  </Card>
 
-            <Card className="feature-card">
-              <CardContent>
-                Perfumes & Accessories
-              </CardContent>
-            </Card>
+  <Card
+    className="feature-card"
+    onClick={() => setActiveTab("shop")}
+  >
+    <CardContent>
+      Perfumes & Accessories
+    </CardContent>
+  </Card>
 
-          </div>
+</div>
         </section>
       )}
 
