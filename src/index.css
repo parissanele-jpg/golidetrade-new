@@ -35,9 +35,10 @@ body {
 }
 
 .banner-overlay h2 {
-  font-size: 52px;
+  font-size: 42px;
   color: gold;
   margin-bottom: 20px;
+  backdrop-filter: blur(2px);
 }
 
 .banner-overlay p {
